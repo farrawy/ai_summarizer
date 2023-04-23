@@ -120,7 +120,7 @@ const Demo = () => {
       {/* Display Results */}
       <div className="my-10 max-w-full flex justify-center items-center">
         {isFetching ? (
-          <div className="flex-row w-full items-center ">
+          <div className="flex flex-col justify-center items-center w-full">
             <img src={loader} alt="loader" className="w-20 h-20" />
             <p>This may take 5 to 10 seconds</p>
           </div>
