@@ -1,4 +1,4 @@
-import { logo } from '../assets';
+import { logo, github } from '../assets';
 
 const Hero = () => {
   return (
@@ -11,9 +11,16 @@ const Hero = () => {
           onClick={() =>
             window.open('https://github.com/farrawy/ai_summarizer')
           }
-          className="black_btn"
+          className="black_btn flex items-center justify-center flex-row "
         >
-          Github
+          <img src={github} alt="github" className="w-6 h-6 object-contain " />
+          <p
+            className="
+            font-satoshi text-sm font-medium text-white max-sm:hidden ml-2
+          "
+          >
+            Source Code
+          </p>
         </button>
       </nav>
 

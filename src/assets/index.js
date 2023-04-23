@@ -4,5 +4,6 @@ import copy from './copy.svg';
 import logo from './logo.png';
 import tick from './tick.svg';
 import enter from './enter.svg';
+import github from './github.png';
 
-export { linkIcon, loader, copy, logo, tick, enter };
+export { linkIcon, loader, copy, logo, tick, enter, github };
