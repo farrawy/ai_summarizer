@@ -16,7 +16,7 @@ const Hero = () => {
           <img src={github} alt="github" className="w-6 h-6 object-contain " />
           <p
             className="
-            font-satoshi text-sm font-medium text-white max-sm:hidden ml-2
+            font-satoshi text-sm font-medium max-sm:hidden ml-2
           "
           >
             Source Code

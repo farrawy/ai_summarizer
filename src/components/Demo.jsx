@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { copy, linkIcon, loader, tick } from '../assets';
+import { bin, copy, linkIcon, loader, tick } from '../assets';
 
 import { useLazyGetSummaryQuery } from '../services/article';
 
@@ -40,6 +40,15 @@ const Demo = () => {
 
       localStorage.setItem('articles', JSON.stringify(updatedAllArticles));
     }
+  };
+
+  // Delete Article
+  const handleDelete = (deleteUrl) => {
+    const filteredArticles = allArticles.filter(
+      (article) => article.url !== deleteUrl,
+    );
+    setAllArticles(filteredArticles);
+    localStorage.setItem('articles', JSON.stringify(filteredArticles));
   };
 
   // Copy URL
@@ -102,7 +111,7 @@ const Demo = () => {
                 <img
                   src={copied === item.url ? tick : copy}
                   alt="copy icon"
-                  className="w-[40%] h-[40%] object-contain"
+                  className="w-[50%] h-[50%] object-contain"
                 />
               </div>
 
@@ -112,6 +121,21 @@ const Demo = () => {
               >
                 {item.url}
               </p>
+
+              <div
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete(item.url);
+                }}
+                className="delete_btn "
+              >
+                <img
+                  src={bin}
+                  alt="copy icon"
+                  className="w-[60%] h-[60%] object-contain peer-focus:opacity-100"
+                />
+              </div>
             </div>
           ))}
         </div>
